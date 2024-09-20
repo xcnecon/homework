@@ -1,0 +1,84 @@
+---
+title: "The Strategic Depth of StarCraft and Its Esports Legacy"
+format:
+    pdf:
+        documentclass: article 
+        number-sections: true
+        margin-top: 1in
+        margin-bottom: 1in
+        margin-left: 1in
+        margin-right: 1in
+        linestretch:  1.5
+        fontsize: 12pt
+    html: default      
+bibliography: references.bib
+---
+
+# Comment {.unnumbered}
+
+- Good Job. Just one minor thing. You didnt add the "author" to YAML front matter. You should add this to your work, paper, HW, etc.
+- Grade: 10/10
+
+# Introduction
+StarCraft, a real-time strategy game developed by Blizzard Entertainment, has left an indelible mark on the esports landscape. This report explores the strategic complexity of StarCraft and its enduring impact on competitive gaming. We will examine the game’s mechanics, its influence on player decision-making, and its role in shaping the modern esports industry.
+
+
+# The Strategic Complexity of StarCraft
+StarCraft’s gameplay is characterized by its intricate balance of resource management, unit production, and tactical deployment. The game’s strategic depth can be quantified using the concept of game-tree complexity[^1], which is expressed as:
+$$C=b^d 
+$${#eq-complexity}
+Where *C* is the game-tree complexity, *b* is the average number of legal moves per position, and *d* is the typical game length in plies (half-moves).
+
+
+The high value of *C* or StarCraft, compared to other strategy games, underscores its complexity and the vast number of possible game states [@ontanon2013]. This complexity contributes to the game’s longevity and its appeal as an esports title.
+
+
+## Player Decision-Making and APM
+One of the key metrics in competitive StarCraft is Actions Per Minute (APM). This measure reflects a player’s ability to execute complex strategies rapidly. @kim2016 found a strong correlation between APM and player skill level. The following figure illustrates this relationship:
+
+:::{#fig-fig1}
+
+![](figure1.png)
+
+Correlation between APM and Player Skill Rating
+:::
+
+
+As shown in @fig-fig1, there is a clear positive correlation between a player’s skill rating and their APM. This relationship highlights the importance of both strategic thinking and mechanical skill in competitive StarCraft.
+
+
+## StarCraft Tournaments and Prize Pools
+The popularity of StarCraft as an esport is evident in the number and scale of tournaments organized worldwide. The following table shows the top StarCraft tournaments by prize pool:
+
+:::{#tbl-tbl1}
+
+\begin{tabular}{c c c c}
+    \hline
+    Tournament Name	& Year & Prize Pool (USD) & Winner \\
+    \hline
+    WCG 2005 & 2005 & \$75,000 & Li “Sky” Xiaofeng \\
+    BlizzCon 2007 & 2007 & \$100,000 & Yoan “ToD” Merlo \\
+    WCG 2009 & 2009 & \$200,000 & Jae Ho “Moon” Jang \\
+    \hline
+\end{tabular}
+
+Top StarCraft Tournaments by Prize Pool
+:::
+
+As seen in @tbl-tbl1, the prize pools for StarCraft tournaments have grown significantly over time, reflecting the game’s increasing popularity and the growth of the esports industry as a whole.
+
+
+# StarCraft’s Legacy in Esports
+StarCraft’s influence extends beyond its own competitive scene. The game has played a crucial role in shaping the broader esports landscape, particularly in South Korea, where it achieved unprecedented popularity and cultural significance.
+
+
+The strategic depth of StarCraft, as quantified by @eq-complexity, has set a benchmark for competitive gaming. Its combination of real-time decision-making, resource management, and tactical execution has influenced the design of numerous subsequent esports titles.
+
+
+# Conclusion
+StarCraft’s strategic complexity, as evidenced by its high game-tree complexity and the importance of APM in competitive play, has cemented its place in esports history. The game’s enduring legacy is reflected in its continued popularity, the scale of its tournaments, and its influence on the broader esports industry. As the esports landscape continues to evolve, StarCraft remains a testament to the power of deep, engaging gameplay in creating a lasting competitive legacy.
+
+
+# References
+
+[^1]:Game-tree complexity is a measure used in game theory to quantify the number of possible game states in a given game. It provides a way to compare the complexity of different games mathematically.
