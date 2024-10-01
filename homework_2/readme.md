@@ -1,3 +1,11 @@
+# Comment
+
+Good Job providing explanations and stating the problem.
+
+Next time, tho, make this a pdf/qmd report.
+
+Grade 10/10
+
 # Content
 This repository contains data, code, and results for Homework 2. The final tidy data is in the workfile.dta in /data/tidy_data.  
 
