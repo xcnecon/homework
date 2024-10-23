@@ -12,6 +12,14 @@ format:
         linestretch:  1.5
         fontsize: 12pt
 ---
+
+Grade 10/10
+
+Excellent work.
+
+One minor suggestion: For discrete variables, kernel densities or violin plots are not the best choice. You might want to consider using bar plots or histograms instead.
+
+
 # Football
 ![Graph 1](results/football_violin.png){fig-align="center" fig-width=50%}
 I produced a violin plot using the vioplot library. The graph is similar to the histogram presented in the textbook, but it provides additional information by showing the quantiles. The mean home team advantage is 0.39 goals per game, with a standard deviation of 1.9 goals. The advantage is insignificant compared to a 0 advantage. It is also difficult to discern an obvious home team advantage from the graph, as the density plot appears quite symmetrical, and the median advantage is 0. However, the 25th percentile has a slightly larger absolute value than the 75th percentile.
