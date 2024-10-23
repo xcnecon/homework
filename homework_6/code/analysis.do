@@ -18,9 +18,9 @@ esttab m1 using ols.txt, replace nonumbers
 
 // ols plot
 predict y_hat
-twoway(scatter emp_firm management, msize(tiny))(lfitci emp_firm management, fcolor(%20))
+twoway(scatter emp_firm management, msize(tiny))(lfitci emp_firm management, fcolor(%20)), title("OLS Plot")
 graph export "ols.png", replace
 
 // lpoly plot
-lpoly emp_firm management, ci msize(tiny)
+lpoly emp_firm management, ci msize(tiny) title("Lpoly Plot")
 graph export "lpoly.png", replace
