@@ -91,4 +91,4 @@ label variable d_l_sp "Monthly log change for SP500"
 
 reg d_l_disney d_l_sp, robust
 estimates store m2
-esttab m1 m2 using reg_table_2.txt, b(2) se(2) star(* 0.05 ** 0.01) r2 ar2 nonumber replace note("Robust std. err. in parentheses") noline md mtitle("Monthly pct chaneg" "Monthly log change") label
+esttab m1 m2 using reg_table_2.txt, b(2) se(2) star(* 0.05 ** 0.01) r2 ar2 nonumber replace note("Robust std. err. in parentheses") noline md mtitle("Monthly pct change" "Monthly log change") label

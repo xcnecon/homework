@@ -1,5 +1,5 @@
 
-|                      | Monthly pct chaneg   | Monthly log change   |
+|                      | Monthly pct change   | Monthly log change   |
 | -------------------- | :------------: | :------------: |
 | Monthly returns on SP500 (%) |         1.14** |                |
 |                      |       (0.10)   |                |
