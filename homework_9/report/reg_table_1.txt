@@ -1,0 +1,14 @@
+
+|                      | Disney Return   |
+| -------------------- | :------------: |
+| Monthly returns on SP500 (%) |         1.14** |
+|                      |       (0.10)   |
+| Constant             |         0.00   |
+|                      |       (0.00)   |
+| Observations         |          131   |
+| *R*<sup>2</sup>      |        0.560   |
+| Adjusted *R*<sup>2</sup> |        0.557   |
+
+Robust std. err. in parentheses<br>
+* *p* < 0.05, ** *p* < 0.01
+

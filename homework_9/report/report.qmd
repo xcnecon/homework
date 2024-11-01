@@ -1,0 +1,103 @@
+---
+title: "Homework 9 Report"
+format:
+    pdf:
+        documentclass: article
+        author: Chenning Xu
+        number-sections: true
+        margin-top: 1in
+        margin-bottom: 1in
+        margin-left: 1in
+        margin-right: 1in
+        linestretch:  1.5
+        fontsize: 10pt
+        fig-pos: "H"
+---
+
+
+I have chosen Disney. 
+
+:::{#fig-fig1}
+
+![](../../homework_9/results/monthly_price_chart.png)
+
+Note: Monthly price chart for Disney and SP500, from Jan 2010 to Dec 2020. N = 132. 
+
+Monthly price chart for Disney and SP500
+:::
+
+
+Disney and SP500 stock prices show a clear uptrend over the sample period. The SP500 uptrend appears stronger, as Disney's price stagnated somewhat between 2016 and 2020, while the SP500 continued to rise. During this period, the annually compounded return for Disney was 15%, compared to 11.2% for the SP500. Despite the apparent uptrend, both price series still follow a random walk. The Phillips–Perron unit root tests yield p-values of 0.8451 for Disney and 0.9908 for SP500, indicating we cannot reject the null hypothesis of a unit root in either case. 
+
+
+:::{#fig-fig2}
+
+![](../../homework_9/results/monthly_return_chart.png)
+
+Note: Monthly return chart for Disney and SP500, from Feb 2010 to Dec 2020. N = 131. 
+
+Monthly price chart for Disney and SP500
+:::
+
+
+Both return series fluctuate around zero and exhibit no trend. The Phillips–Perron test rejects the null hypothesis for both series, with p-values below 0.001, indicating that neither return series follows a random walk. Disney stock appears to be more volatile than the SP500.
+
+
+:::{#tbl-tbl1}
+
+{{< include return_table.txt >}}
+
+Descriptive statistics on monthly returns
+:::
+
+The summary statistics of the monthly returns confirms our observation in @fig-fig2, that Disney has a higher average return and more volatility in this period. The mean monthly return for Disney is 1.4% and for SP500 is 1%. The standard deviation of monthly return for Disney is 7% and for SP500 is 4.6%. 
+
+
+:::{#tbl-tbl2}
+
+{{< include reg_table_1.txt >}}
+
+Returns on Disney and market returns: Simple regression results
+:::
+
+
+The intercept estimate is not statistically significant, indicating that Disney's average monthly return is not significantly different from zero when SP500 returns are unchanged (no alpha or excess return for Disney in the sample period). The slope estimate suggests that Disney's returns tend to be 1.14% when SP500 returns are 1%. However, the 95% confidence interval for the slope includes 1, so we cannot reject the hypothesis that Disney's market beta is equal to 1 at the 5% significance level. The $R^2$ of this regression is 0.56, meaning that SP500 returns explain 56% of the variation in Disney's returns in this sample. 
+
+
+:::{#fig-fig3}
+
+![](../../homework_9/results/visual1.png)
+
+Note: Monthly percentage returns on the Disney stock and the S&P500 index. Scatterplot, regression line
+and the 45 degree line for comparison.
+
+Returns on Disney and market returns: scatterplot and regression line
+:::
+
+
+This chart visualizes the regression results with a scatter plot of Disney's monthly returns against SP500’s, alongside a regression line and a 45-degree reference line. The regression line has a positive slope, steeper than the 45-degree line, indicating that Disney’s market beta is greater than 1. This confirms our findings in @tbl-tbl2. 
+
+
+:::{#fig-fig4}
+
+![](../../homework_9/results/visual2.png)
+
+Note: Monthly percentage returns on the Disney stock and the S&P500 index.
+
+Stock and market returns over time
+:::
+
+
+These two charts illustrate the volatility of Disney stock compared to the SP500. The left chart shows that Disney exhibits higher volatility over the sample period, as its monthly returns generally have larger absolute values than those of the SP500, confirming our findings in @tbl-tbl1. The right chart, with reduced density, clarifies that Disney and SP500 returns tend to move in the same direction, especially when the movements are large, which aligns with the positive slope coefficient in @tbl-tbl2.
+
+
+\newpage
+:::{#tbl-tbl3}
+
+{{< include reg_table_2.txt >}}
+
+Returns on Disney and market returns: alternative measurements
+:::
+
+
+This table presents regression results using both percentage change and log change. The results are very similar: each model has a slope coefficient of 1.14, with a statistically insignificant intercept. The $R^2$ values are also nearly identical. Using an alternative measure of monthly return adds robustness to our analysis.
