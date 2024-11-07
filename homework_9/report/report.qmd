@@ -14,6 +14,13 @@ format:
         fig-pos: "H"
 ---
 
+# Grade
+
+Great job as always. 10/10
+
+Just one question. one table says Microsoft, not Disney. Typo?
+
+## Report
 
 I have chosen Disney. 
 
