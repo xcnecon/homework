@@ -14,6 +14,18 @@ format:
         fig-pos: "H"
 ---
 
+# Grade
+
+10/10
+
+As always great work. Perhaps only one thing that none pointed out when the HW was posted. 
+
+in the textbook, the exercise was to relate Firm size to management score. Here I did a small typo which may have suggested to use the score as indep variable
+and size (# emp) as dep variable. 
+
+In the future, my suggestion is that is something that is being ask of you makes little sense, bring it up.
+
+
 # Linear regression
 
 :::{#tbl-ols}
