@@ -1,0 +1,84 @@
+---
+title: "Homework 10 Report"
+format:
+    pdf:
+        documentclass: article
+        author: Chenning Xu
+        number-sections: true
+        margin-top: 1in
+        margin-bottom: 1in
+        margin-left: 1in
+        margin-right: 1in
+        linestretch:  1.2
+        fontsize: 10pt
+        fig-pos: "H"
+---
+
+# Results
+:::{#tbl-tbl1}
+
+{{< include table.txt >}}
+
+Fit on the training data
+:::
+Notes: *K-fold 1* is calculated by $cv\_kfold$, $k(5)$ $reps(5)$. *K-fold 2* is calculated by $cv\_kfold$, $k(10)$ $reps(5)$. 
+
+I would submit **model 6** as my best attempt. All the models are est sto'ed by model#.
+
+# Feature Engineering
+All eight models use dummy variables such as $suburb$, $council\_code$, $region\_code$, and $seller\_code$. I removed dummy variables with fewer than 20 positive instances, as well as those whose coefficients have a p-value above 0.1. For detailed dummies like $suburb$ and $seller$, this results in the removal of many variables, whereas for $region\_code$, none were removed.
+
+:::{#tbl-tbl1}
+
+{{< include sum_stats.txt >}}
+
+Summary Statistics of Continuous Variables
+:::
+
+For continuous variables, transformations were applied based on data characteristics:  
+- **Quadratic Transformation**: Applied to variables like $distance$, $rooms$, $bathroom$, $latitude$, and $longitude$ when the scatter plot against the target variable showed curvature without extreme outliers.  
+- **Log Transformation**: Applied to variables with extreme values and strong right skewness, such as $landsize$ and $buildingarea$.  
+- **No Transformation**: Variables like $date$, $yearbuilt$, $car$, and $prop\_count$ were left untransformed as they showed no obvious curvature or skew.  
+
+# Model Specification
+
+## Models 1 to 4
+
+Two variables, $yearbuilt$ and $buildingarea$, have a significant amount of missing data. Including these two variables reduces the training sample by half. Therefore, I tested models both with and without these variables.
+
+**Model 1** includes dummy variables for $council\_code$, $housing\_type$, and $seller$ based on the following rationale:  
+1. Housing prices vary across regions.  
+2. Realtors may specialize in high- or low-value properties, influencing the sale price.  
+3. Housing type impacts value, as townhouses tend to be less expensive than single-family houses.  
+
+**Model 1** also includes the following continuous variables: $distance$, $distance2$, $rooms$, $rooms2$, $bathroom$, $bathroom2$, $car$, $log(landsize)$, $latitude$, $latitude2$, $longitude$, $longitude2$, $prop\_count$, and $date$. $Distance$ and $number of rooms$ are obviously key determinants of housing value. Parking availability ($car$) and land size tend to increase housing value. $Latitude$ and $longitude$ are included as proxies for city center proximity, which often correlates with higher value. Both variables are correlated with distance, but including them increases model performance nonetheless.
+
+Additionally, interaction terms included in Model 1 are:  
+1. $rooms * bathroom$  
+2. $distance * log(landsize)$  
+3. $distance * rooms$  
+4. $distance * car$  
+5. $distance * type\_h$  
+
+These interactions capture relationships that affect housing value, such as the combined effect of $rooms * bathroom$ on the overall value. Distance interactions with $landsize$, $rooms$, $car$, and $housing\_type$ allow for different impacts near the city versus further out. For instance, in suburban areas, homes with more land, rooms, and parking spots are common, while in the city, these features can make a house significantly more expensive. Although townhouses are usually less expensive, they can be costlier than single-family homes in rural areas like Red Hook.
+
+**Model 2** is the same as Model 1 but also includes $log(buildingarea)$ and $yearbuilt$. Both variables are highly relevant to housing price but contain approximately 50% missing values, which reduces the available training data. This model has better fit measures than **model 1** except BIC, which shows that $log(buildingarea)$ and $yearbuilt$ are still necessary independent variables. This makes sense since a larger building area should add value to houses, and older houses tend to sell for less. In later models from **model 5** to **model 8**, missing values are replaced by averages.
+
+**Model 3** is the same as Model 1 but replaces $council\_code$ with $suburb$ as the dummy variable. $Suburb$ offers more localized information, but the trade-off is the removal of more dummies with low positive values. Due to fewer observations for each dummy, including variables with high missing values (e.g., $buildingarea$ and $yearbuilt$) is less suitable. This model shows improvement over **model 1** except having a slightly lower BIC, indicating that using more detailed $suburb$ may be better than using $council$.
+
+**Model 4** includes both $council$ and $suburb$ as dummy variables, which introduces potential multicollinearity. However, this model performs the best among the first four models, prioritizing predictive accuracy over interpretability. Since the goal is prediction rather than explanation, the model is preferred despite the multicollinearity risk. This model significantly outperforms **model 1** in all measures, suggesting that the improved accuracy outweighs the risk of multicollinearity.
+
+## Models 5 to 8
+
+In these models, I included $log(buildingarea)$ and $yearbuilt$, but filled their missing values using mean values to allow for a larger training sample.
+
+**Model 5** is the same as **model 3**. It outperforms **model 3** in all measures, indicating that including the two variables with missing values increases model performance.
+
+**Model 6** is the same as **model 4** except that it now includes the two variables with missing values. It outperforms **model 4** as expected.
+
+**Model 7** is the same as **model 6** except that it includes dummy variable $region_code$. This is a risky move since $region_code$, $council_code$, and $suburb$ have multicollinearity, but surprisingly this model still outperforms **model 6** in all measures. However, the improvement is marginal, so it may not be worth the risk to include $region_code$.
+
+**Model 8** is a streamlined model. It is based on **model 5** but removes $prop_count$, $latitude$, and $longitude$. $Prop\_count$ does not have a highly significant coefficient in previous models, and both $latitude$ and $longitude$ are correlated with distance. This model does not perform well.
+
+# Model Selection
+I believe **model 6** is the best candidate. Excluding **model 7**, it has the highest $R^2$, lowest $RMSE$, lowerest $AIC$ and $BIC$ and lowest $MSE$ from K-fold cross-validations. **Model 7** sligtly outperform **model 6** but I think it is not worthwhile to risk more multi-colinearity. 
