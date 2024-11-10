@@ -14,6 +14,13 @@ format:
         fig-pos: "H"
 ---
 
+# Grade
+
+Great job as always. 10/10
+
+Just one question. one table says Microsoft, not Disney. Typo?
+
+## Report
 
 I have chosen Disney. 
 
@@ -48,6 +55,10 @@ Both return series fluctuate around zero and exhibit no trend. The Phillips–Pe
 {{< include return_table.txt >}}
 
 Descriptive statistics on monthly returns
+:::
+
+:::{.callout}
+Was this a typo? it says Microsoft but it should say disney right?
 :::
 
 The summary statistics of the monthly returns confirms our observation in @fig-fig2, that Disney has a higher average return and more volatility in this period. The mean monthly return for Disney is 1.4% and for SP500 is 1%. The standard deviation of monthly return for Disney is 7% and for SP500 is 4.6%. 
