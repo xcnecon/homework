@@ -14,6 +14,19 @@ format:
         fig-pos: "H"
 ---
 
+# Comments and grade
+
+As Always great job. I like your detailed approach for the model design. 
+As I mentioned at lunch on Friday, the only point or problem with what you did was the creation of your dummies.
+
+While you made sure to create dummies for groups that had "enough" observations (thus that could also be found in the test data), `tab var, gen(v_)` is not the best way to do that, because the command uses the internal order to "name" the variables. Once you move to the training data, running the same code would have provided something completely different. 
+
+I hacked your code a bit, so the variable name follows its internal code. Which works for your case.
+
+Again, great job.
+
+Grade 10/10
+
 # Results
 :::{#tbl-tbl1}
 
