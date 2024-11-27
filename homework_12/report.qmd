@@ -14,13 +14,46 @@ format:
         fig-pos: "H"
 ---
 
+
+# Summary Staistics
+
+:::{#tbl-tbl1}
+
+{{< include sum_stats.txt >}}
+
+Summary statistics - continous variables
+:::
+
+
+:::{#fig-fig1 }
+
+![](Catogories.png){width=100% fig-align=center}
+
+Categorical characteristics of Chefs
+::: 
+
+
+# Models and Performamce
+I tested three models:
+
+Model 1: A logistic regression model using all continuous and categorical variables to predict the probability of a chef being in the top 20%. This serves as the benchmark model.  
+
+Model 2: A lasso regression model, which incorporates all variables and their interactions as the initial input.  
+
+Model 3: A simplified model with manually selected variables. In this model, I excluded variables such as the number of signature dishes, weekly hours practiced, and all the categorical variables. These were omitted because I found no apparent relationship between them and the target variable based on LPOLY graphs. Additionally, this model does not include interactions or log transformations of the independent variables, as manual inspections did not reveal significant relationships warranting such transformations. However, this approach carries the risk of overlooking interactions that, while not intuitively obvious, might possess predictive power.  
+
+The evaluation matrix of the three models is presented below. 
+
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|}
 \hline
  & Model 1 & Model 2 & Model 3 & Best\\ \hline
-Log-Likelihood & -1091  & -1086 & -1110 & Model 2\\ \hline
-Pseudo-R2 & 0.369 & 0.3721 & 0.3582 & Model 2\\ \hline
-AUC & 0.8832 & 0.8863 & 0.8777 & Model 2 \\ \hline
+Log-Likelihood & -1091  & -1086 & -1098 & Model 2\\ \hline
+Pseudo-R2 & 0.3693 & 0.3721 & 0.3649 & Model 2\\ \hline
+AUC & 0.8832 & 0.8863 & 0.8808 & Model 2 \\ \hline
 Classification Accuracy(50\%) & 0.83 & 0.8323 & 0.829 & Model 2 \\ \hline
+Number of Variables & 30 & 28 & 12 & Model 3 \\ \hline
 \end{tabular}
 \end{center}
+
+By any accuracy measure, the second model, which uses lasso, is the best performer. However, its advantage over the other two models appears to be marginal. Given that Model 3 uses less than half the variables of the other two models yet achieves comparable predictive power, I consider Model 3 to be the best approach.
