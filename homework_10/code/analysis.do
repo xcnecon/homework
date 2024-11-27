@@ -20,6 +20,7 @@ foreach var of varlist suburb_* {
     quietly count if `var' == 1
     if r(N) < 20 drop `var'
 }
+drop suburb_1 suburb_3 suburb_8 suburb_10 suburb_19 suburb_48 suburb_51 suburb_81 suburb_89 suburb_102 suburb_112 suburb_124 suburb_128 suburb_141 suburb_142 suburb_152 suburb_168 suburb_186 suburb_208 suburb_219 suburb_238 suburb_258 suburb_287 suburb_296 suburb_307
 
 tabulate region_code, generate(region_)
 drop region_code

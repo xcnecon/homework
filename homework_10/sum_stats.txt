@@ -12,3 +12,5 @@
 | Longtitude           |         8292 |     144.4238 |     145.4827 |     144.9983 |     .1229395 |
 | Number of properties that exist in the suburb. |         8300 |          121 |        21650 |      7459.17 |     4488.203 |
 | Date of Sell         |         8300 |        20481 |        21260 |     20936.76 |     200.9497 |
+| Observations         |         8300 |              |              |              |              |
+
