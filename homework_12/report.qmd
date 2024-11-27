@@ -1,0 +1,26 @@
+---
+title: "Homework 12 Report"
+format:
+    pdf:
+        documentclass: article
+        author: Chenning Xu
+        number-sections: true
+        margin-top: 1in
+        margin-bottom: 1in
+        margin-left: 1in
+        margin-right: 1in
+        linestretch:  1.2
+        fontsize: 10pt
+        fig-pos: "H"
+---
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+ & Model 1 & Model 2 & Model 3 & Best\\ \hline
+Log-Likelihood & -1091  & -1086 & -1110 & Model 2\\ \hline
+Pseudo-R2 & 0.369 & 0.3721 & 0.3582 & Model 2\\ \hline
+AUC & 0.8832 & 0.8863 & 0.8777 & Model 2 \\ \hline
+Classification Accuracy(50\%) & 0.83 & 0.8323 & 0.829 & Model 2 \\ \hline
+\end{tabular}
+\end{center}
