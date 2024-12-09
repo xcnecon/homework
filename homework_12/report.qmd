@@ -14,6 +14,15 @@ format:
         fig-pos: "H"
 ---
 
+# Grade and Comment
+
+As I mentioned in class, you didnt need to do this homework. Nevertheless, here some added comments
+
+1. Your Descriptive Statistics its ok, but could have benefit from making a constrast with top20 vs Bottom 20. As an early approach to see what makes "top" contestants better. 
+2. I was expecting some interpretation of the model itself. How different characteristics affect chances of ending Top20. 
+
+This was just below what you have done in the past.
+
 
 # Summary Staistics
 
